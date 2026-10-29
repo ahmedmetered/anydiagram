@@ -24,14 +24,21 @@ All output goes to an `architecture/` folder at the project root:
 
 ```
 architecture/
-  index.md              table of contents with a mermaid master graph
+  index.md              table of contents, mermaid master graph, changelog
   structure.md          components and their relationships
   data-flow.md          how information moves through the system
   dependencies.md       external packages, services, integrations
+  api-surface.md        what the codebase exposes (only if API surface was selected)
+  domain-concepts.md    core entities and rules (only if domain concepts were selected)
+  deployment.md         where it runs (only if deployment was selected)
   <module>/             one subfolder per major module (recursive)
     overview.md         that module's diagram and notes
     <submodule>.md      recursive children
 ```
+
+The three optional files exist only for the perspectives selected in Step 2 —
+the contract now covers all six, so every selection has a defined output.
+Diff-mode changelog entries live in `index.md` under a `## Changelog` section.
 
 Conventions: diagram node IDs are English kebab-case and match folder names;
 prose follows the user's configured language; every diagram is valid Mermaid
